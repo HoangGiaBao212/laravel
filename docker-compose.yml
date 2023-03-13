@@ -14,7 +14,7 @@ services:
     logging:
       driver: none
     networks:
-      - bookstore-network
+      - laravel-network
   phpmyadmin:
     container_name: laravel-phpmyadmin
     image: phpmyadmin:5.2.1-apache
@@ -44,10 +44,9 @@ services:
       MYSQL_HOST: database
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin123
-      MYSQL_DATABASE: bookstore
+      MYSQL_DATABASE: laravel
     networks:
       - laravel-network
-
   artisan:
     container_name: laravel-artisan
     build:
@@ -58,7 +57,7 @@ services:
     working_dir: /var/www
     entrypoint: ["/var/www/artisan"]
     networks:
-      - bookstore-network
+      - laravel-network
   composer:
     container_name: laravel-composer
     image: composer:2.5.4
@@ -82,5 +81,5 @@ services:
     networks:
       - laravel-network
 networks:
-  bookstore-network:
+  laravel-network:
     driver: bridge
