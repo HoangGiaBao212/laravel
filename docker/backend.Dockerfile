@@ -11,3 +11,4 @@ RUN addgroup -g 1000 -S backend && adduser -u 1000 -S backend -G backend && \
     mkdir -p /var/www && chown -R backend:backend /var/www
 
 USER backend
+
