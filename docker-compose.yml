@@ -32,7 +32,7 @@ services:
     build:
       context: ./docker
       dockerfile: backend.Dockerfile
-    container_name: bookstore-backend
+    container_name: laravel-backend
     working_dir: /var/www
     volumes:
       - ./backend:/var/www
@@ -80,7 +80,7 @@ services:
       - backend
       - phpmyadmin
     networks:
-      - bookstore-network
+      - laravel-network
 networks:
   bookstore-network:
     driver: bridge
